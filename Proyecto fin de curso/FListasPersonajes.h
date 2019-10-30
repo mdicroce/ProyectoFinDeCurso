@@ -26,7 +26,7 @@ typedef struct
 }nodoPer;
 
 nodoPer * inicLista (void);
-crearNodo (nodoPer **nuevoNodo,personajes dato);
-agregarNodo (nodoPer **lista, nodoPer *nuevoNodo);
-eliminarNodo (nodoPer **lista, personajes dato);
-borrarLista (nodoPer **lista);
+nodoPer *  crearNodo (nodoPer *nuevoNodo,personajes dato);
+void agregarNodo (nodoPer **lista, nodoPer *nuevoNodo);
+nodoPer * eliminarNodo (nodoPer *lista, personajes dato);
+nodoPer * borrarLista (nodoPer *lista);
