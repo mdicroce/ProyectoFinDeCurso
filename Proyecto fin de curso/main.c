@@ -8,5 +8,12 @@
 
 int main()
 {
+    srand(time(NULL));
+    int i;
+    while (1)
+    {
+        i = rand();
+        printf("\t%i",rand()%(11+(10*2))+0);
+    }
     return 0;
 }

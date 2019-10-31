@@ -7,9 +7,12 @@ typedef struct
     int vida;
     int defenza;
     int agilidad;
-    int mana;
+    int fuerza;
+    int inteligencia;
+    int suerte;
     char nombre[20];
     int tipo;
+    int lvl;
 }personajes;
 typedef struct
 {

@@ -6,7 +6,7 @@
 	<string.h>
 	<time.h>
 
-1572528352 source:c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\main.c
+1572533198 source:c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\main.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -27,9 +27,20 @@
 1572528484 source:c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\listasdobles.c
 	"listasDobles.h"
 
-1572528501 c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\listasdobles.h
+1572532066 c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\listasdobles.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	<string.h>
+
+1572533122 source:c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\iniciarpersonajes.c
+	"IniciarPersonajes.h"
+
+1572530410 c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\iniciarpersonajes.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
 

@@ -11,3 +11,7 @@
 #include <time.h>
 #include "listasDobles.h"
 
+personajes  crearPersonajes ();
+personajes  crearEnemigos ();
+nodoPer * crearListaEnemigos ();
+nodoPer * crearListaAliados();
