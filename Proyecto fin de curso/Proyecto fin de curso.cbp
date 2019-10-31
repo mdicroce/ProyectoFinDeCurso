@@ -31,10 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="FListasPersonajes.c">
+		<Unit filename="listasDobles.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="FListasPersonajes.h" />
+		<Unit filename="listasDobles.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

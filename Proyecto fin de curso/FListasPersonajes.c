@@ -7,28 +7,59 @@ nodoPer * inicLista (void)
 nodoPer * crearNodo (nodoPer *nuevoNodo,personajes dato)
 {
     nuevoNodo = (nodoPer*)malloc(sizeof (nodoPer));
+
+    nuevoNodo->chara = dato;
+
+
     nuevoNodo ->siguiente = NULL;
     nuevoNodo -> anterior = NULL;
 
 }
-agregarNodo (nodoPer **lista, nodoPer *nuevoNodo)
+nodoPer * agregarNodo (nodoPer *lista, nodoPer *nuevoNodo)
 {
-    nuevoNodo -> siguiente = *lista;
-    *lista = nuevoNodo;
+    if (lista == NULL)
+    {
+        lista = nuevoNodo;
+    }
+    else
+    {
+        nuevoNodo->siguiente = lista;
+        lista->anterior = nuevoNodo;
+    }
+    return lista;
 }
 nodoPer * eliminarNodo (nodoPer *lista, personajes dato)
 {
-    if (lista != NULL)
+    nodoPer *aux = lista;
+    nodoPer *ante;
+    nodoPer *sig;
+    while ((strcmp(aux ->chara.nombre,dato.nombre)!= 0)&&(aux != NULL))
     {
-        if (0==strcmp(dato.nombre,*lista->chara.nombre))
+        //aux->anterior = aux;
+        aux = aux ->siguiente;
+    }
+    if (aux != NULL)
+    {
+        if (aux == lista)
         {
-            nodoPer *aux = lista;
-            lista->anterior = NULL;
+            lista = aux->siguiente;
+            if (aux->siguiente != NULL)
+            {
+                lista->anterior =NULL;
+            }
+            else if (aux->siguiente != NULL)
+            {
+                ante = aux ->anterior;
+                sig = aux->siguiente;
+                ante -> siguiente = aux ->siguiente;
+                sig -> anterior = aux -> anterior;
+            }
+            else
+            {
+                ante = aux -> anterior;
+                ante ->siguiente = NULL;
+            }
             free(aux);
-        }
-        else
-        {
-            lista = eliminarNodo(lista->siguiente,dato);
         }
     }
     return lista;

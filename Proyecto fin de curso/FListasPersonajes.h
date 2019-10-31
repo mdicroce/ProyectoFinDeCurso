@@ -21,12 +21,12 @@ typedef struct
 typedef struct
 {
     personajes chara;
-    struct nodoPer * siguiente;
-    struct nodoPer * anterior;
+    struct nodoPer *siguiente;
+    struct nodoPer *anterior;
 }nodoPer;
 
 nodoPer * inicLista (void);
 nodoPer *  crearNodo (nodoPer *nuevoNodo,personajes dato);
-void agregarNodo (nodoPer **lista, nodoPer *nuevoNodo);
+nodoPer * agregarNodo (nodoPer *lista, nodoPer *nuevoNodo);
 nodoPer * eliminarNodo (nodoPer *lista, personajes dato);
 nodoPer * borrarLista (nodoPer *lista);

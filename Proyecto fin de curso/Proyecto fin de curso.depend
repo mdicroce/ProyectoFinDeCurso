@@ -6,21 +6,30 @@
 	<string.h>
 	<time.h>
 
-1572441154 source:c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\main.c
+1572528352 source:c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\main.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	<string.h>
 	<time.h>
-	"FListasPersonajes.h"
+	"listasDobles.h"
 
-1572438602 c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\flistaspersonajes.h
+1572524455 c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\flistaspersonajes.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	<string.h>
 	<time.h>
 
-1572440407 source:c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\flistaspersonajes.c
+1572526379 source:c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\flistaspersonajes.c
 	"FListasPersonajes.h"
+
+1572528484 source:c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\listasdobles.c
+	"listasDobles.h"
+
+1572528501 c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\listasdobles.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
 
