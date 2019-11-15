@@ -1,3 +1,5 @@
+#ifndef LISTASDOBLES_H_INCLUDED
+#define LISTASDOBLES_H_INCLUDED
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
@@ -33,3 +35,4 @@ nodoPer * borrarTodaLaLista(nodoPer * lista);
 int sumarEdadesLista(nodoPer * lista);
 void mostrarUnNodo(nodoPer * aux);
 void recorrerYmostrar(nodoPer * lista);
+#endif // INICIARPERSONAJES_H_INCLUDED

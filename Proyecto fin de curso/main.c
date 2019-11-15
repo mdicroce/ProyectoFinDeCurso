@@ -4,16 +4,22 @@
 #include <string.h>
 #include <time.h>
 #include "listasDobles.h"
-
+#include "IniciarPersonajes.h"
+void mostrarPrueba(nodoPer * aux)
+{
+    while (aux != NULL)
+    {
+        printf("\nVIDA%i\nDEFENZA%i\nAGILIDAD%i",aux->chara.vida,aux->chara.defenza,aux->chara.agilidad);
+        printf("\n\n");
+        aux = aux->siguiente;
+    }
+}
 
 int main()
 {
-    srand(time(NULL));
-    int i;
-    while (1)
-    {
-        i = rand();
-        printf("\t%i",rand()%(11+(10*2))+0);
-    }
+    personajes aladin [7];
+    nodoPer * pucho;
+    pucho = crearListaAliados(aladin);
+    mostrarPrueba(pucho);
     return 0;
 }

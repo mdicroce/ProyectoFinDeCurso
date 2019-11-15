@@ -32,11 +32,11 @@ personajes  crearPersonajes (personajes characters [])
         }
     }
 }
-personajes  crearEnemigos (personajes enemy[])
+void  crearEnemigos (personajes enemy[])
 {
     int i =4,x;
 
-    for (i=0;i<7;i++)
+    for (i=4;i<7;i++)
     {
         enemy [i].tipo = i;
         enemy[i].vida = rand()%26-i*2+(70-i*10);
@@ -52,11 +52,57 @@ personajes  crearEnemigos (personajes enemy[])
         enemy[i].agilidad=rand()%20+(5);
     }
 }
-nodoPer * crearListaEnemigos ()
+int seleccionarEnemigosAzar (int x[10])
 {
-
+    ///0=normal, 1=tanque, 2=mago
+    int validos = rand () %8 + 2;
+    int random;
+    for (int i=0;0<2;i++)
+    {
+        x[i]=rand () %2;
+    }
+    for (int i=2;i<validos;i++)
+    {
+        random = rand()%100;
+        if (random <45)
+        {
+            x[i]=5;
+        }
+        else if(random>75)
+        {
+            x[i]=6;
+        }
+        else
+        {
+            x[i]=4;
+        }
+    }
+    return validos;
 }
-nodoPer * crearListaAliados()
+nodoPer * crearListaEnemigos (personajes enemys[])
 {
-
+    int objetivo[10];
+    int validos;
+    nodoPer * finali = inicLista();
+    nodoPer * nuevoNodo;
+    validos = seleccionarEnemigosAzar(objetivo);
+    crearEnemigos(enemys);
+    for (int i = 0; i<validos; i++)
+    {
+        nuevoNodo = crearNodo(enemys [objetivo[i]]);
+        finali = agregarPpio(finali,nuevoNodo);
+    }
+    return finali;
+}
+nodoPer * crearListaAliados(personajes aliados[])
+{
+    nodoPer * nuevoNodo;
+    nodoPer * finali = inicLista();
+    crearPersonajes(aliados);
+    for (int i = 0; i<4;i++)
+    {
+        nuevoNodo = crearNodo(aliados[i]);
+        finali = agregarPpio(finali,nuevoNodo);
+    }
+    return finali;
 }
