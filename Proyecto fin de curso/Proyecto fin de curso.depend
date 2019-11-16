@@ -64,7 +64,7 @@
 	<time.h>
 	"listasDobles.h"
 
-1573859556 source:c:\users\mtt1p\documents\github\proyectofindecurso\proyecto fin de curso\main.c
+1573872675 source:c:\users\mtt1p\documents\github\proyectofindecurso\proyecto fin de curso\main.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -72,4 +72,16 @@
 	<time.h>
 	"listasDobles.h"
 	"IniciarPersonajes.h"
+
+1573872428 source:c:\users\mtt1p\documents\github\proyectofindecurso\proyecto fin de curso\battletheme.c
+	"BattleTheme.h"
+
+1573870171 c:\users\mtt1p\documents\github\proyectofindecurso\proyecto fin de curso\battletheme.h
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
 

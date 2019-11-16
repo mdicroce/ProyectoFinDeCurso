@@ -5,21 +5,34 @@
 #include <time.h>
 #include "listasDobles.h"
 #include "IniciarPersonajes.h"
-void mostrarPrueba(nodoPer * aux)
+void turnoPrueba()
 {
-    while (aux != NULL)
+    printf("puto el que lea");
+    int ignacio [10];
+    for (int i = 0;i<10;i++)
     {
-        printf("\nVIDA%i\nDEFENZA%i\nAGILIDAD%i",aux->chara.vida,aux->chara.defenza,aux->chara.agilidad);
-        printf("\n\n");
-        aux = aux->siguiente;
+        ignacio [i] = rand() % 10 + 5;
     }
+    while (1)
+    {
+        for (int i = 0;i<10;i++)
+        {
+            ignacio [i] --;
+            printf("\nignacio %i %i",i,ignacio[i]);
+            if (ignacio[i]==0)
+            {
+                printf("\nIgnacio %i es puto",i);
+            }
+        }
+        Sleep(1000);
+        printf("\n");
+
+    }
+
 }
 
 int main()
 {
-    personajes aladin [7];
-    nodoPer * pucho;
-    pucho = crearListaAliados(aladin);
-    mostrarPrueba(pucho);
+    turnoPrueba();
     return 0;
 }

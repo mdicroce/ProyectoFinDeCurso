@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="BattleTheme.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="BattleTheme.h" />
 		<Unit filename="IniciarPersonajes.c">
 			<Option compilerVar="CC" />
 		</Unit>
