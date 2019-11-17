@@ -19,6 +19,7 @@ personajes  crearPersonajes (personajes characters [])
     {
         characters [i].tipo = i;
         characters[i].vida = rand()%15+(30+(i*7));
+        characters [i].vidaMax = characters[i].vida;
         characters[i].suerte=rand()%10+5;
         characters[i].lvl = 1;
         characters[i].inteligencia=rand()%6+(15-(i*5));
@@ -40,10 +41,12 @@ void  crearEnemigos (personajes enemy[])
     {
         enemy [i].tipo = i;
         enemy[i].vida = rand()%26-i*2+(70-i*10);
+        enemy [i].vidaMax = enemy[i].vida;
         enemy[i].suerte=rand()%i+5;
         enemy[i].lvl = 1;
         enemy[i].inteligencia=rand()%6+i;
         enemy[i].fuerza=rand ()%11+(3+(8-i));
+        enemy[i].fuerzaOrg = enemy [i].fuerza;
         if (i==5)
         {
             enemy[i].fuerza += 3;

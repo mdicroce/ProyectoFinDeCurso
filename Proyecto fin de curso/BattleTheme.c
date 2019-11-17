@@ -1,6 +1,4 @@
 #include "BattleTheme.h"
-nodoPer * cola = NULL;
-EstructuradeTiempo datos [30];
 nodoPer * calculoAtaque (nodoPer *atacante, nodoPer *defensor)
 {
     int danio;
@@ -34,51 +32,36 @@ nodoPer * eliminarEnemigo (nodoPer * aliados)
     }
     return aliados;
 }
-void agregarACola (nodoPer *nodoAAgregar)
+nodoPer * defenzaON (nodoPer *person)
 {
-    nodoPer * aux = cola;
-    nodoAAgregar ->siguiente = NULL;
-    nodoAAgregar ->anterior = NULL;
-    cola = ColaAgregar(aux,nodoAAgregar);
+    person->chara.defenza = person ->chara.defenza *2;
+    person ->chara.agilidad = person ->chara.agilidad *2;
+    return person;
 }
-int pasarAEstructura(nodoPer * soldados,int i)
+nodoPer * defenzaOF (nodoPer *person)
 {
-    while (soldados != NULL)
+    person->chara.defenza = person->chara.defenza /2;
+    person ->chara.agilidad = person ->chara.agilidad/2;
+    return person;
+}
+nodoPer * curacion(nodoPer *aliado, nodoPer *trus)
+{
+    trus->chara.vida += aliado->chara.inteligencia;
+    if (trus->chara.vida > trus->chara.vidaMax)
     {
-        strcpy(datos[i].nombre,soldados->chara.nombre);
-        datos[i].tiempoBase = 100 - soldados->chara.agilidad;
-        datos[i].tiempoTranscurrido = datos[i].tiempoBase;
-        soldados = soldados ->siguiente;
-        i++;
+        trus->chara.vida = trus->chara.vidaMax;
     }
-    return i;
+    return trus;
 }
-brindarTurno (nodoPer *aliados, nodoPer * enemigos)
+nodoPer * buffDamage(nodoPer *aliado, nodoPer *trus)
 {
-    int validos;
-    nodoPer * aux;
-    validos = pasarAEstructura(aliados,0);
-    validos = pasarAEstructura(enemigos,validos);
-    while (1)
-    {
-        for (int i = 0;i<validos;i++)
-        {
-            datos [i].tiempoTranscurrido -- ;
-            if (datos[i].tiempoTranscurrido == 0)
-            {
-                aux = buscarNodo(datos.nombre,aliados);
-                if (aux == NULL)
-                {
-                    aux = buscarNodo(datos.nombre,enemigos);
-                }
-                agregarACola(aux);
-            }
-        }
-        if (cola != NULL)
-        {
-            ColaQuitar();
-            DarleTurno ();
-        }
-        Sleep(500);
-    }
+    trus->chara.fuerza += (0.1 * aliado->chara.inteligencia);
+    return trus;
 }
+nodoPer *debuffDamagge (nodoPer *aliado)
+{
+    aliado->chara.fuerza = aliado ->chara.fuerzaOrg;
+    return aliado ;
+}
+
+/// PREGUNTAR como realizar los turnos (?)

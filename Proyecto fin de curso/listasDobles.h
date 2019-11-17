@@ -7,14 +7,17 @@
 typedef struct
 {
     int vida;
+    int vidaMax;
     int defenza;
     int agilidad;
     int fuerza;
+    int fuerzaOrg;
     int inteligencia;
     int suerte;
     char nombre[20];
     int tipo;
     int lvl;
+    int turno;
 }personajes;
 typedef struct
 {
@@ -34,7 +37,5 @@ nodoPer * agregarEnOrden(nodoPer * lista, nodoPer * nuevoNodo);
 nodoPer * borrarTodaLaLista(nodoPer * lista);
 int sumarEdadesLista(nodoPer * lista);
 void mostrarUnNodo(nodoPer * aux);
-void recorrerYmostrar(nodoPer * lista);
-nodoPer *ColaAgregar (nodoPer * Cola, nodoPer *Nuevo);
-nodoPer *ColaQuitar (nodoPer * Cola);
+
 #endif // INICIARPERSONAJES_H_INCLUDED
