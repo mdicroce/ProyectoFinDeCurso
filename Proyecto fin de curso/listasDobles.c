@@ -124,3 +124,16 @@ void recorrerYmostrar(nodoPer * lista)
         aux = aux->siguiente;
     }
 }
+
+nodoPer * ColaAgregar (nodoPer * Cola, nodoPer *Nuevo)
+{
+    agregarFinal(Cola,Nuevo);
+    return Cola;
+}
+nodoPer * ColaQuitar (nodoPer * Cola)
+{
+    nodoPer * aux = Cola->siguiente;
+    aux ->anterior = NULL;
+    free(Cola);
+    return aux;
+}

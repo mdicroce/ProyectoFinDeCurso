@@ -35,4 +35,6 @@ nodoPer * borrarTodaLaLista(nodoPer * lista);
 int sumarEdadesLista(nodoPer * lista);
 void mostrarUnNodo(nodoPer * aux);
 void recorrerYmostrar(nodoPer * lista);
+nodoPer *ColaAgregar (nodoPer * Cola, nodoPer *Nuevo);
+nodoPer *ColaQuitar (nodoPer * Cola);
 #endif // INICIARPERSONAJES_H_INCLUDED

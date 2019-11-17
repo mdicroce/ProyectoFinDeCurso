@@ -8,7 +8,12 @@
 #include <string.h>
 #include <time.h>
 
-
+typedef struct
+{
+    char nombre[20];
+    int tiempoBase;
+    int tiempoTranscurrido;
+}EstructuradeTiempo;
 
 
 #endif // BATTLETHEME_H_INCLUDED
