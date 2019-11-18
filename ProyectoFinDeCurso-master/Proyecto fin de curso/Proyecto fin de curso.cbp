@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Proyecto fin de curso" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Proyecto fin de curso" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Proyecto fin de curso" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="BattleTheme.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="BattleTheme.h" />
+		<Unit filename="Graficos (alpha).c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Graficos (alpha).h" />
+		<Unit filename="IAenemigos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="IAenemigos.h" />
+		<Unit filename="IniciarPersonajes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="IniciarPersonajes.h" />
+		<Unit filename="MenuDeAccion.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="MenuDeAccion.h" />
+		<Unit filename="listasDobles.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="listasDobles.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
