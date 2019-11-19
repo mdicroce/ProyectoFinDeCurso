@@ -1,6 +1,5 @@
 #include "IniciarPersonajes.h"
-nodoPer * aliados, *enemigos;
-personajes charas[7];
+
 /**TIPOS DE PERSONAJES:
 tipo 0 = Mago
 tipo 1 = Curador
@@ -31,6 +30,7 @@ personajes  crearPersonajes (personajes characters [])
             characters[i].suerte= characters[i].suerte * 2;
             characters[i].agilidad = characters [i].agilidad *2;
         }
+        characters[i].mod =0;
     }
 }
 void  crearEnemigos (personajes enemy[])
@@ -53,17 +53,22 @@ void  crearEnemigos (personajes enemy[])
         }
         enemy[i].defenza=rand()%6+(15-i);
         enemy[i].agilidad=rand()%20+(5);
+        enemy [i].mod = 0;
     }
 }
 int seleccionarEnemigosAzar (int x[10])
 {
     ///0=normal, 1=tanque, 2=mago
+
     int validos = rand () %8 + 2;
+
     int random;
-    for (int i=0;0<2;i++)
+    for (int i=0;i<2;i++)
     {
-        x[i]=rand () %2;
+
+        x[i]=rand () %2 +4;
     }
+
     for (int i=2;i<validos;i++)
     {
         random = rand()%100;
@@ -82,6 +87,47 @@ int seleccionarEnemigosAzar (int x[10])
     }
     return validos;
 }
+
+char enteroACaracter (int numero)
+{
+    return numero + 49;
+}
+nodoPer * darNombreAEnemigos (nodoPer * enemigos)
+{
+    nodoPer *aux = enemigos;
+    char tanque[10] = "tanque";
+    char normal[10] = "normal";
+    char chaman [10] = "chaman";
+    int tanquei=0, normali =0, curadori =0;
+    while (aux != NULL)
+    {
+        switch (aux->chara.tipo)
+        {
+        case 4:
+            strcpy(aux->chara.nombre,"tanque");
+            //strcat (aux->chara.nombre,enteroACaracter(tanquei));
+            tanquei++;
+            printf("hola 1 %s",aux->chara.nombre);
+            break;
+        case 5:
+            strcpy(aux->chara.nombre,"normal");
+            //strcat (aux->chara.nombre,enteroACaracter(normali));
+            normali++;
+            printf("hola  2%s",aux->chara.nombre);
+            break;
+        case 6:
+            strcpy(aux->chara.nombre,"chaman");
+            //strcat (aux->chara.nombre,enteroACaracter(curadori));
+            printf("hola 3%s",aux->chara.nombre);
+            curadori++;
+            break;
+        default:
+            break;
+        }
+        aux = aux ->siguiente;
+    }
+    return enemigos;
+}
 nodoPer * crearListaEnemigos (personajes enemys[])
 {
     int objetivo[10];
@@ -92,9 +138,11 @@ nodoPer * crearListaEnemigos (personajes enemys[])
     crearEnemigos(enemys);
     for (int i = 0; i<validos; i++)
     {
+
         nuevoNodo = crearNodo(enemys [objetivo[i]]);
         finali = agregarPpio(finali,nuevoNodo);
     }
+    finali = darNombreAEnemigos(finali);
     return finali;
 }
 nodoPer * crearListaAliados(personajes aliados[])
@@ -104,6 +152,36 @@ nodoPer * crearListaAliados(personajes aliados[])
     crearPersonajes(aliados);
     for (int i = 0; i<4;i++)
     {
+        system("cls");
+        switch (i)
+        {
+        case 0:
+            printf("\n\n\t\tIngrese el nombre del mago\n");
+            fflush(stdin);
+            printf("\t\t");
+            gets (aliados[i].nombre);
+            break;
+        case 1:
+            printf("\n\n\t\tIngrese el nombre del curador\n");
+            fflush(stdin);
+            printf("\t\t");
+            gets (aliados[i].nombre);
+            break;
+        case 2:
+            printf("\n\n\t\tIngrese el nombre del rougue\n");
+            fflush(stdin);
+            printf("\t\t");
+            gets (aliados[i].nombre);
+            break;
+        case 3:
+            printf("\n\n\t\tIngrese el nombre del soldado\n");
+            fflush(stdin);
+            printf("\t\t");
+            gets (aliados[i].nombre);
+            break;
+        default:
+            break;
+        }
         nuevoNodo = crearNodo(aliados[i]);
         finali = agregarPpio(finali,nuevoNodo);
     }

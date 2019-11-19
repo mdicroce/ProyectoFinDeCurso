@@ -23,7 +23,124 @@ La defenza directamente se tiene que aceptar.
 
 los objetos se veran despues.*/
 
-void seleccionarAccion (nodoPer * aliado)
+nodoPer * seleccionarAtacante (nodoPer * enemigos)
 {
+    int flag = 1;
+    nodoPer * aux = enemigos;
+    char opc;
+    while (flag)
+    {
+        fflush(stdin);
+        opc = getch();
+        switch (opc)
+        {
+        case 72:
+            if (aux ->anterior != NULL)
+            {
+                aux = aux->anterior;
+            }
+            break;
+        case 80:
+            if (aux ->siguiente != NULL)
+            {
+                aux = aux ->siguiente;
+            }
+            break;
+        case 13:
+            flag = 0;
+            break;
+        default:
+            break;
+        }
+    }
+    return aux;
+}
+void seleccionarAccion (nodoPer ** aliado,nodoPer ** enemigos, nodoPer **persona)
+{
+    nodoPer * objetivo;
+    if ((*persona)->chara.mod == 1)
+    {
+        (*persona )= defenzaOF((*persona));
+    }
+    int seleccion = 0,seleccionAuxiliar;
+    int flag = 1;
+    int flag2 = 1;
+    int i =0;
+    char boton;
+    while (flag)
+    {
+        while (flag2)
+        {
+            fflush(stdin);
+            boton = getch();
+            switch (boton)
+            {
+            case 72:
+                if (seleccion >0)
+                {
+                    i--;
+                }
+                break;
+            case 80:
+                if (seleccion <3)
+                {
+                    i++;
+                }
+            case 13:
+                flag2 =0;
+            break;
+            default:
+            break;
+            }
+        }
+        fflush(stdin);
+        boton = getch();
+        switch (seleccion)
+        {
+        case 0: ///ataque
+            objetivo = seleccionarAtacante (*enemigos);
+            objetivo = calculoAtaque((*persona),objetivo);
+            (*enemigos) = eliminarEnemigo((*enemigos));
+            if ((*persona)->chara.mod == 2)
+            {
+                (*persona) = debuffDamagge((*persona));
+            }
+            flag = 0;
+            break;
+        case 1:///defenza
+            (*persona)=defenzaON((*persona));
+            flag = 0;
+            break;
+        case 2:///magia
+            flag = 0;
+            if ((*persona)->chara.tipo == 0)
+            {
 
+            }
+            else if ((*persona)->chara.tipo == 1)
+            {
+                //seleccionAuxiliar=seleccionarMagia ();
+                if (seleccionAuxiliar == 0)
+                {
+                    objetivo = seleccionarAtacante((*aliado));
+                    objetivo = curacion((*persona),objetivo);
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+                flag = 1;
+            }
+
+            break;
+        case 3:///items
+            flag = 0;
+            break;
+        default:
+            break;
+        }
+    }
 }

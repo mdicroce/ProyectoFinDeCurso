@@ -36,6 +36,7 @@ nodoPer * defenzaON (nodoPer *person)
 {
     person->chara.defenza = person ->chara.defenza *2;
     person ->chara.agilidad = person ->chara.agilidad *2;
+    person ->chara.mod = 1;
     return person;
 }
 nodoPer * defenzaOF (nodoPer *person)

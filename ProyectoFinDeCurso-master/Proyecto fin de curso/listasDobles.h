@@ -18,6 +18,7 @@ typedef struct
     int tipo;
     int lvl;
     int turno;
+    int mod;
 }personajes;
 typedef struct
 {
