@@ -1,0 +1,259 @@
+# depslib dependency file v1.0
+1572355135 source:c:\users\usuario\desktop\proyecto fin de curso\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+
+1572533198 source:c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+
+1572524455 c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\flistaspersonajes.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+
+1572526379 source:c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\flistaspersonajes.c
+	"FListasPersonajes.h"
+
+1572528484 source:c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\listasdobles.c
+	"listasDobles.h"
+
+1572532066 c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\listasdobles.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+
+1572533122 source:c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\iniciarpersonajes.c
+	"IniciarPersonajes.h"
+
+1572530410 c:\users\usuario\desktop\proyectofindecurso-master\proyecto fin de curso\iniciarpersonajes.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+
+1574021099 source:c:\users\mtt1p\documents\github\proyectofindecurso\proyecto fin de curso\listasdobles.c
+	"listasDobles.h"
+
+1574022447 c:\users\mtt1p\documents\github\proyectofindecurso\proyecto fin de curso\listasdobles.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+
+1574024349 source:c:\users\mtt1p\documents\github\proyectofindecurso\proyecto fin de curso\iniciarpersonajes.c
+	"IniciarPersonajes.h"
+
+1573859414 c:\users\mtt1p\documents\github\proyectofindecurso\proyecto fin de curso\iniciarpersonajes.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+
+1574021112 source:c:\users\mtt1p\documents\github\proyectofindecurso\proyecto fin de curso\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+
+1574022373 source:c:\users\mtt1p\documents\github\proyectofindecurso\proyecto fin de curso\battletheme.c
+	"BattleTheme.h"
+
+1574003726 c:\users\mtt1p\documents\github\proyectofindecurso\proyecto fin de curso\battletheme.h
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+
+1574130245 source:c:\users\matias di croce\desktop\proyectofindecurso-master\proyecto fin de curso\iniciarpersonajes.c
+	"IniciarPersonajes.h"
+
+1574121290 c:\users\matias di croce\desktop\proyectofindecurso-master\proyecto fin de curso\iniciarpersonajes.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+
+1574088086 c:\users\matias di croce\desktop\proyectofindecurso-master\proyecto fin de curso\listasdobles.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+
+1574030799 source:c:\users\matias di croce\desktop\proyectofindecurso-master\proyecto fin de curso\listasdobles.c
+	"listasDobles.h"
+
+1574126572 source:c:\users\matias di croce\desktop\proyectofindecurso-master\proyecto fin de curso\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	"IAenemigos.h"
+	"Graficos (alpha).h"
+	"MenuDeAccion.h"
+
+1574088554 source:c:\users\matias di croce\desktop\proyectofindecurso-master\proyecto fin de curso\battletheme.c
+	"BattleTheme.h"
+
+1574040993 c:\users\matias di croce\desktop\proyectofindecurso-master\proyecto fin de curso\battletheme.h
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+
+1574040863 source:c:\users\matias di croce\desktop\proyectofindecurso-master\proyecto fin de curso\graficos (alpha).c
+	"Graficos (alpha).h"
+
+1574040863 source:c:\users\matias di croce\desktop\proyectofindecurso-master\proyecto fin de curso\iaenemigos.c
+	"IAenemigos.h"
+
+1574040863 c:\users\matias di croce\desktop\proyectofindecurso-master\proyecto fin de curso\iaenemigos.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	"Graficos (alpha).h"
+	"MenuDeAccion.h"
+
+1574040863 c:\users\matias di croce\desktop\proyectofindecurso-master\proyecto fin de curso\graficos (alpha).h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	"IAenemigos.h"
+	"MenuDeAccion.h"
+
+1574040863 c:\users\matias di croce\desktop\proyectofindecurso-master\proyecto fin de curso\menudeaccion.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	"IAenemigos.h"
+	"Graficos (alpha).h"
+
+1574120714 source:c:\users\matias di croce\desktop\proyectofindecurso-master\proyecto fin de curso\menudeaccion.c
+	"MenuDeAccion.h"
+
+1574114334 source:c:\users\usuario\desktop\proyectofindecurso-master\proyectofindecurso-master\proyecto fin de curso\battletheme.c
+	"BattleTheme.h"
+
+1574114334 c:\users\usuario\desktop\proyectofindecurso-master\proyectofindecurso-master\proyecto fin de curso\battletheme.h
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+
+1574114334 c:\users\usuario\desktop\proyectofindecurso-master\proyectofindecurso-master\proyecto fin de curso\listasdobles.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+
+1574114334 c:\users\usuario\desktop\proyectofindecurso-master\proyectofindecurso-master\proyecto fin de curso\iniciarpersonajes.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+
+1574114334 source:c:\users\usuario\desktop\proyectofindecurso-master\proyectofindecurso-master\proyecto fin de curso\graficos (alpha).c
+	"Graficos (alpha).h"
+
+1574114334 c:\users\usuario\desktop\proyectofindecurso-master\proyectofindecurso-master\proyecto fin de curso\graficos (alpha).h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	"IAenemigos.h"
+	"MenuDeAccion.h"
+
+1574114334 c:\users\usuario\desktop\proyectofindecurso-master\proyectofindecurso-master\proyecto fin de curso\iaenemigos.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	"Graficos (alpha).h"
+	"MenuDeAccion.h"
+
+1574114334 c:\users\usuario\desktop\proyectofindecurso-master\proyectofindecurso-master\proyecto fin de curso\menudeaccion.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	"IAenemigos.h"
+	"Graficos (alpha).h"
+
+1574114334 source:c:\users\usuario\desktop\proyectofindecurso-master\proyectofindecurso-master\proyecto fin de curso\iaenemigos.c
+	"IAenemigos.h"
+
+1574114334 source:c:\users\usuario\desktop\proyectofindecurso-master\proyectofindecurso-master\proyecto fin de curso\listasdobles.c
+	"listasDobles.h"
+
+1574114334 source:c:\users\usuario\desktop\proyectofindecurso-master\proyectofindecurso-master\proyecto fin de curso\menudeaccion.c
+	"MenuDeAccion.h"
+
+1574166187 source:c:\users\usuario\desktop\proyectofindecurso-master\proyectofindecurso-master\proyecto fin de curso\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	"IAenemigos.h"
+	"Graficos (alpha).h"
+	"MenuDeAccion.h"
+
+1574166180 source:c:\users\usuario\desktop\proyectofindecurso-master\proyectofindecurso-master\proyecto fin de curso\iniciarpersonajes.c
+	"IniciarPersonajes.h"
+
