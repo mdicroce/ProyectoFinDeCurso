@@ -7,6 +7,8 @@
 #include <windows.h>
 #include <string.h>
 #include <time.h>
+#include "Listas.h"
+#include "IAenemigos.h"
 
 typedef struct
 {
@@ -14,6 +16,14 @@ typedef struct
     int tiempoBase;
     int tiempoTranscurrido;
 }EstructuradeTiempo;
+
+nodoPer * calculoAtaque (nodoPer *atacante, nodoPer *defensor);
+nodoPer * eliminarEnemigo (nodoPer * aliados);
+nodoPer * defenzaON (nodoPer *person);
+nodoPer * defenzaOF (nodoPer *person);
+nodoPer * curacion(nodoPer *aliado, nodoPer *trus);
+nodoPer * buffDamage(nodoPer *aliado, nodoPer *trus);
+nodoPer *debuffDamagge (nodoPer *aliado);
 
 
 #endif // BATTLETHEME_H_INCLUDED

@@ -18,6 +18,7 @@ typedef struct
     int tipo;
     int lvl;
     int turno;
+    int mod;
 }personajes;
 typedef struct
 {
@@ -30,7 +31,7 @@ nodoPer * inicLista();
 nodoPer * crearNodo (personajes dato);
 nodoPer * agregarPpio (nodoPer * lista, nodoPer * nuevoNodo);
 nodoPer * buscarUltimo(nodoPer * lista);
-nodoPer * buscarNodo(char nombre[20], nodoPer * lista);
+nodoPer * buscarNodo(int dato, nodoPer * lista);
 nodoPer * agregarFinal(nodoPer * lista, nodoPer * nuevoNodo);
 nodoPer * borrarNodo(nodoPer * lista, personajes dato);
 nodoPer * agregarEnOrden(nodoPer * lista, nodoPer * nuevoNodo);

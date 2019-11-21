@@ -38,10 +38,10 @@ nodoPer * buscarUltimo(nodoPer * lista)
 
     return aux;
 }
-nodoPer * buscarNodo(char nombre[20], nodoPer * lista)
+nodoPer * buscarNodo(int dato, nodoPer * lista)
 {
     nodoPer *aux = lista;
-    while ((strcmp(aux->chara.nombre,nombre)!=0)&&(aux != NULL))
+    while ((dato != aux ->chara.turno)&&(aux != NULL))
     {
         aux -> anterior = aux;
         aux = aux -> siguiente;

@@ -1,1 +1,0 @@
-#include "Graficos (alpha).h"

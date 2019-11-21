@@ -35,10 +35,26 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="BattleTheme.h" />
+		<Unit filename="Graficos (alpha).c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Graficos (alpha).h" />
+		<Unit filename="IAenemigos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="IAenemigos.h" />
 		<Unit filename="IniciarPersonajes.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="IniciarPersonajes.h" />
+		<Unit filename="Listas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Listas.h" />
+		<Unit filename="MenuDeAccion.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="MenuDeAccion.h" />
 		<Unit filename="listasDobles.c">
 			<Option compilerVar="CC" />
 		</Unit>
