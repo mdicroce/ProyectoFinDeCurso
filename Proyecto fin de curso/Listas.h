@@ -18,3 +18,4 @@ nodo * agregarFinalSimple(nodo * lista, nodo * nuevoNodo);
 nodo * borrarNodoSimple(nodo * lista, int dato);
 nodo * agregarEnOrdenSimple(nodo * lista, nodo * nuevoNodo);
 nodo * borrarTodaLaListaSimple(nodo * lista);
+nodo * borrarNodoPrimeroSimple (nodo* lista);

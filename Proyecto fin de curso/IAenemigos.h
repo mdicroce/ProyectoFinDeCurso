@@ -9,7 +9,11 @@
 #include "IniciarPersonajes.h"
 #include "Graficos (alpha).h"
 #include "MenuDeAccion.h"
+#include "BattleTheme.h"
+
 
 IA (nodoPer **aliados,nodoPer **enemigos, nodoPer**seleccionado);
 
 #endif // IAENEMIGOS_H_INCLUDED
+
+/// LUCIANO

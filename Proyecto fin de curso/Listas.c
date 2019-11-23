@@ -111,3 +111,9 @@ nodo * borrarTodaLaListaSimple (nodo * lista)
     }
     return seg;
 }
+nodo * borrarNodoPrimeroSimple(nodo * lista)
+{
+    nodo * aux = lista->siguiente;
+    free(lista);
+    return aux;
+}

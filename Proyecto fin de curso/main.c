@@ -13,18 +13,11 @@ nodoPer *aliados;
 personajes charas[7];
 void inicioDePartida ()
 {
-    //aliados = crearListaAliados(charas);
-    enemigos = crearListaEnemigos(charas);
-    int puto;
-    puto = contarValidos(enemigos);
-    printf("\n\n%i",puto);
-    while (enemigos != NULL)
+    aliados = crearListaAliados(charas);
+    while (1)
     {
-        printf("\nNombre %i",enemigos->chara.turno);
-        enemigos = enemigos ->siguiente;
+        enemigos = crearListaEnemigos(charas);
     }
-
-
 }
 
 int main()

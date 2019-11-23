@@ -102,27 +102,81 @@ void brindarTurnos (nodoPer **aliados,nodo** enemigos)
         datoBuscado = buscarNodo(ColaDeTurnos->dato,*aliados);
         if (datoBuscado != NULL)
         {
-            seleccionarAccion(&aliados,&enemigos,&datoBuscado);
+            seleccionarAccion(aliados,enemigos,&datoBuscado);
         }
         else
         {
             datoBuscado = buscarNodo(ColaDeTurnos->dato,*enemigos);
             if (datoBuscado != NULL)
             {
-                IA (&aliados,&enemigos,&datoBuscado);
+                IA (aliados,enemigos,&datoBuscado);
             }
         }
     }
 
 
 }
-determinarSiSiguenVivos (nodoPer *aliados,nodoPer *enemigos,int validos)
+void determinarSiSiguenVivos (nodoPer *aliados,nodoPer *enemigos,int validos)
 {
     nodoPer * auxAliados = aliados, *auxEnemigos = enemigos;
     for (int i = 0; i<validos;i++)
     {
-
+        auxAliados=aliados;
+        auxEnemigos = enemigos;
+        while (auxAliados != NULL)
+        {
+            if (auxAliados->chara.turno == i)
+            {
+                if (auxAliados->chara.vida <= 0)
+                {
+                    turnosGuardados[i] = -1;
+                }
+            }
+            auxAliados = auxAliados->siguiente;
+        }
+        while (auxEnemigos != NULL)
+        {
+            if (auxEnemigos->chara.turno == i)
+            {
+                if (auxEnemigos->chara.vida  <= 0)
+                {
+                    turnosGuardados[i] = -1;
+                }
+            }
+            auxEnemigos = auxEnemigos->siguiente;
+        }
     }
+}
+void eliminarDeCola (int validos)
+{
+    ColaDeTurnos = borrarNodoPrimeroSimple(ColaDeTurnos);
+    for (int i = 0;i<validos;i++)
+    {
+        if (turnosGuardados [i] < 0)
+        {
+            ColaDeTurnos = borrarNodoSimple(ColaDeTurnos,i);
+        }
+    }
+}
+void restaurarTiempo (nodoPer *aliados, nodoPer * enemigos)
+{
+    while ((aliados->chara.turno !=ColaDeTurnos->dato)&&(aliados != NULL))
+    {
+        aliados = aliados->siguiente;
+    }
+    if (aliados == NULL)
+    {
+        while ((enemigos->chara.turno != ColaDeTurnos->dato)&&(enemigos != NULL))
+        {
+            enemigos = enemigos ->siguiente;
+        }
+        turnosGuardados[ColaDeTurnos->dato] = 100 - enemigos->chara.agilidad;
+    }
+    else
+    {
+        turnosGuardados[ColaDeTurnos->dato] = 100 - aliados ->chara.agilidad;
+    }
+
 }
 void iniciarCombate (nodoPer ** aliados,nodoPer ** enemigos,int validos)
 {
@@ -150,8 +204,11 @@ void iniciarCombate (nodoPer ** aliados,nodoPer ** enemigos,int validos)
             i++;
             if (ColaDeTurnos != NULL)
             {
+                /// EN la versión final, esto tiene que realizarse en un hilo aparte.
+                restaurarTiempo(*aliados,*enemigos);
                 brindarTurnos(*aliados,*enemigos);
                 determinarSiSiguenVivos (*aliados,*enemigos,validos);
+                eliminarDeCola (validos);
             }
         }
 
