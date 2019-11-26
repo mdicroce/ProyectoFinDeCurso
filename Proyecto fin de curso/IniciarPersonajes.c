@@ -17,7 +17,7 @@ personajes  crearPersonajes (personajes characters [])
     for (i=0;i<4;i++)
     {
         characters [i].tipo = i;
-        characters[i].vida = rand()%15+(30+(i*7));
+        characters[i].vida = i-1;//rand()%15+(30+(i*7));
         characters [i].vidaMax = characters[i].vida;
         characters[i].suerte=rand()%10+5;
         characters[i].lvl = 1;

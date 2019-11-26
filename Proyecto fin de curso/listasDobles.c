@@ -41,8 +41,11 @@ nodoPer * buscarUltimo(nodoPer * lista)
 nodoPer * buscarNodo(int dato, nodoPer * lista)
 {
     nodoPer *aux = lista;
-    while ((dato != aux ->chara.turno)&&(aux != NULL))
+    printf("\n\nHOLA");
+    system("pause");
+    while ((aux != NULL)&&(dato != aux ->chara.turno))
     {
+
         aux -> anterior = aux;
         aux = aux -> siguiente;
     }
@@ -64,38 +67,46 @@ nodoPer * agregarFinal(nodoPer * lista, nodoPer * nuevoNodo)
 }
 nodoPer * borrarNodo(nodoPer * lista, personajes dato)
 {
-    nodoPer *aux = lista;
-    nodoPer *ante;
-    nodoPer *sig;
-    while ((strcmp(aux ->chara.nombre,dato.nombre)!= 0)&&(aux != NULL))
+    nodoPer * aBorrar=NULL;
+    nodoPer * seg=NULL;
+
+    if(lista!=NULL)
     {
-        //aux->anterior = aux;
-        aux = aux ->siguiente;
-    }
-    if (aux != NULL)
-    {
-        if (aux == lista)
+        if(0 == strcmp(lista->chara.nombre,dato.nombre))
         {
-            lista = aux->siguiente;
-            if (aux->siguiente != NULL)
+            aBorrar=lista;
+
+            lista=lista->siguiente;
+            if(lista!=NULL)
+                lista->anterior=NULL;
+
+            free(aBorrar);
+        }
+        else
+        {
+            seg=lista->siguiente;
+            while(seg!=NULL && 0 != strcmp(seg->chara.nombre,dato.nombre))
             {
-                lista->anterior =NULL;
+                seg=seg->siguiente;
             }
-            else if (aux->siguiente != NULL)
+
+            if( seg!= NULL)
             {
-                ante = aux ->anterior;
-                sig = aux->siguiente;
-                ante -> siguiente = aux ->siguiente;
-                sig -> anterior = aux -> anterior;
+                nodoPer * anterior=seg->anterior; /// bajo a una variable el anterior
+
+                anterior->siguiente = seg->siguiente; ///salteo el nodo que quiero eliminar.
+
+                if(seg->siguiente) /// si existe el nodo siguiente
+                {
+                    nodoPer * siguiente = seg->siguiente;
+                    siguiente->anterior=anterior;
+                }
+                free(seg); ///elimino el nodo.
             }
-            else
-            {
-                ante = aux -> anterior;
-                ante ->siguiente = NULL;
-            }
-            free(aux);
+
         }
     }
+
     return lista;
 }
 

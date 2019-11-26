@@ -1,6 +1,14 @@
 #include "BattleTheme.h"
 int *turnosGuardados;
 nodo * ColaDeTurnos;
+void prueba (nodoPer *aux)
+{
+    while (aux!= NULL)
+    {
+        printf("Nombre : %s\n",aux->chara.nombre);
+        aux = aux->siguiente;
+    }
+}
 nodoPer * calculoAtaque (nodoPer *atacante, nodoPer *defensor)
 {
     int danio;
@@ -17,20 +25,36 @@ nodoPer * calculoAtaque (nodoPer *atacante, nodoPer *defensor)
     {
         danio = danio/2;
     }
-    defensor->chara.vida -= danio;
+    if (danio <= 0)
+    {
+        defensor->chara.vida--;
+    }
+    else
+    {
+        defensor->chara.vida -= danio;
+    }
 
     return defensor;
 }
 
 nodoPer * eliminarEnemigo (nodoPer * aliados)
 {
-    while (aliados != NULL)
+    personajes auxiliares[20];
+    int i=0,validos;
+    nodoPer*aux = aliados;
+    while (aux != NULL)
     {
-        if (aliados->chara.vida <= 0)
+        auxiliares[i] = aux->chara;
+        i++;
+        aux = aux ->siguiente;
+    }
+    validos = i+1;
+    for (i=0;i<validos;i++)
+    {
+        if (auxiliares[i].vida <= 0)
         {
-            aliados = borrarNodo(aliados,aliados->chara);
+            aliados = borrarNodo(aliados,auxiliares[i]);
         }
-        aliados = aliados->siguiente;
     }
     return aliados;
 }
@@ -77,7 +101,7 @@ int contarValidos (nodoPer * enemigos)
     }
     return i;
 }
-void previaCombate(nodoPer* aliados, nodoPer *enemigos)
+int previaCombate(nodoPer* aliados, nodoPer *enemigos)
 {
     nodoPer *auxAliados = aliados, *auxEnemigos = enemigos;
     int validos = contarValidos(enemigos);
@@ -92,23 +116,29 @@ void previaCombate(nodoPer* aliados, nodoPer *enemigos)
         turnosGuardados[i]= 100 - auxEnemigos ->chara.agilidad;
         auxEnemigos = auxEnemigos ->siguiente;
     }
+    return validos;
 }
-void brindarTurnos (nodoPer **aliados,nodo** enemigos)
+void brindarTurnos (nodoPer *aliados,nodo* enemigos)
 {
-    nodoPer * datoBuscado;
+    nodoPer * datoBuscado = NULL;
+    nodo* auxiliarColaDeTurnos = ColaDeTurnos;
+    nodoPer *auxAliados = aliados, *auxEnemigos = enemigos;
     int deQuienEs;
+
     if (datoBuscado == NULL)
     {
-        datoBuscado = buscarNodo(ColaDeTurnos->dato,*aliados);
+        datoBuscado = buscarNodo(auxiliarColaDeTurnos->dato,auxAliados);
         if (datoBuscado != NULL)
         {
-            seleccionarAccion(aliados,enemigos,&datoBuscado);
+            seleccionarAccion(&auxAliados,&auxEnemigos,&datoBuscado);
         }
         else
         {
-            datoBuscado = buscarNodo(ColaDeTurnos->dato,*enemigos);
+            printf("\n\t\t %i",auxiliarColaDeTurnos->dato);
+            datoBuscado = buscarNodo(auxiliarColaDeTurnos->dato,auxEnemigos);
             if (datoBuscado != NULL)
             {
+                printf("\t\t\tjesus");
                 IA (aliados,enemigos,&datoBuscado);
             }
         }
@@ -160,35 +190,63 @@ void eliminarDeCola (int validos)
 }
 void restaurarTiempo (nodoPer *aliados, nodoPer * enemigos)
 {
-    while ((aliados->chara.turno !=ColaDeTurnos->dato)&&(aliados != NULL))
+    nodoPer * auxAliados = aliados, *auxEnemigos = enemigos;
+
+    while ((auxAliados!= NULL)&&(auxAliados->chara.turno !=ColaDeTurnos->dato))
     {
-        aliados = aliados->siguiente;
+        auxAliados= auxAliados->siguiente;
+
     }
-    if (aliados == NULL)
+    if (auxAliados== NULL)
     {
-        while ((enemigos->chara.turno != ColaDeTurnos->dato)&&(enemigos != NULL))
+
+        while ((auxEnemigos->chara.turno != ColaDeTurnos->dato)&&(auxEnemigos!= NULL))
         {
-            enemigos = enemigos ->siguiente;
+            auxEnemigos= auxEnemigos->siguiente;
         }
-        turnosGuardados[ColaDeTurnos->dato] = 100 - enemigos->chara.agilidad;
+        if (turnosGuardados[ColaDeTurnos->dato] != -1)
+        {
+            turnosGuardados[ColaDeTurnos->dato] = 100 - auxEnemigos->chara.agilidad;
+        }
+
     }
     else
     {
-        turnosGuardados[ColaDeTurnos->dato] = 100 - aliados ->chara.agilidad;
+        if (turnosGuardados[ColaDeTurnos->dato] != -1)
+        {
+            turnosGuardados[ColaDeTurnos->dato] = 100 - auxAliados->chara.agilidad;
+        }
     }
 
 }
-void iniciarCombate (nodoPer ** aliados,nodoPer ** enemigos,int validos)
+void roberto (void)
+{
+    nodo *aux = ColaDeTurnos;
+    while (aux != NULL)
+    {
+        printf("\nsopapo%i",aux->dato);
+        aux = aux ->siguiente;
+    }
+}
+void iniciarCombate (nodoPer * aliados,nodoPer * enemigos,int validos)
 {
     int vivos = 1;
     int i=0;
     int deQuienEs;
     nodo * nuevoNodoSimple;
+    nodoPer * aux = enemigos;
     while (vivos)
     {
+        if (aliados == NULL)
+        {
+            system("cls");
+            printf("HOLA");
+        }
         for (int i=0;i<validos;i++)
         {
-                if (turnosGuardados[i] >0)
+            //printf("\n|%i| %i |",turnosGuardados[i],i);
+
+            if (turnosGuardados[i] >0)
             {
                 turnosGuardados[i] --;
             }
@@ -196,26 +254,42 @@ void iniciarCombate (nodoPer ** aliados,nodoPer ** enemigos,int validos)
             {
                 nuevoNodoSimple = crearNodoSimple(i);
                 ColaDeTurnos = agregarFinalSimple(ColaDeTurnos,nuevoNodoSimple);
+
             }
             else
             {
 
             }
-            i++;
             if (ColaDeTurnos != NULL)
             {
+                roberto ();
                 /// EN la versión final, esto tiene que realizarse en un hilo aparte.
-                restaurarTiempo(*aliados,*enemigos);
-                brindarTurnos(*aliados,*enemigos);
-                determinarSiSiguenVivos (*aliados,*enemigos,validos);
+                determinarSiSiguenVivos (aliados,enemigos,validos);
+                restaurarTiempo(aliados,enemigos);
+                printf("\n1");
+                brindarTurnos(aliados,enemigos); //CORREGIR ATAQUE
+                aliados = eliminarEnemigo(aliados);
+                printf("\n2");
+                enemigos = eliminarEnemigo(enemigos);
+                printf("\n3");
+                determinarSiSiguenVivos (aliados,enemigos,validos);
+                printf("\n4");
+                printf("hola");
                 eliminarDeCola (validos);
+                printf("\n5");
             }
         }
-
+        if ((aliados == NULL) || (enemigos == NULL))
+        {
+            vivos = 0;
+            system("cls");
+            printf("\n\n\n\n\n\t\t\t\t GAME OVER");
+        }
+        //Sleep(500);
     }
 }
 
-
+///EL PROBLEMA A RESOLVER es determinar si siguen vivos, porque debería decir que X esta muerto y hacer que su numero se vuelva -1 y no lo hace
 /// PREGUNTAR como realizar los turnos (?)
 /** Primero tenemos que volver a pensar en como se debe realizar esto. Primero se hacía con una lista y un arreglo dinámico. La lista
 guardaba los turnos y trabajaba como una cola, mientras que el arreglo guardaba una referencia al turno y esas cosas.

@@ -11,12 +11,32 @@
 nodoPer *enemigos;
 nodoPer *aliados;
 personajes charas[7];
+
 void inicioDePartida ()
 {
+    int validos;
+    nodoPer *aux,*aux2;
     aliados = crearListaAliados(charas);
     while (1)
     {
         enemigos = crearListaEnemigos(charas);
+        aux = enemigos;
+        while (aux != NULL)
+        {
+            printf("\n%i",aux->chara.vida);
+            aux = aux->siguiente;
+        }
+        enemigos = eliminarEnemigo(enemigos);
+        printf("\n");
+        aux = enemigos;
+        while (aux != NULL)
+        {
+            printf("\n%i",aux->chara.vida);
+            aux = aux->siguiente;
+        }
+        system("pause"),
+        validos = previaCombate(aliados,enemigos);
+        iniciarCombate(aliados,enemigos,validos);
     }
 }
 

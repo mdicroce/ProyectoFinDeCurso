@@ -31,6 +31,8 @@ nodoPer * seleccionarAtacante (nodoPer * enemigos)
     while (flag)
     {
         fflush(stdin);
+        system("cls");
+        printf("%s",aux->chara.nombre);
         opc = getch();
         switch (opc)
         {
@@ -58,6 +60,7 @@ nodoPer * seleccionarAtacante (nodoPer * enemigos)
 void seleccionarAccion (nodoPer ** aliado,nodoPer ** enemigos, nodoPer **persona)
 {
     nodoPer * objetivo;
+    nodoPer *aux = (*enemigos);
     if ((*persona)->chara.mod == 1)
     {
         (*persona )= defenzaOF((*persona));
@@ -71,21 +74,26 @@ void seleccionarAccion (nodoPer ** aliado,nodoPer ** enemigos, nodoPer **persona
     {
         while (flag2)
         {
+
             fflush(stdin);
+            printf("%i",seleccion);
             boton = getch();
             switch (boton)
             {
             case 72:
-                if (seleccion >0)
+                printf("arriba");
+                if (seleccion > 0)
                 {
-                    i--;
+                    seleccion--;
                 }
                 break;
             case 80:
-                if (seleccion <3)
+                printf("abajo");
+                if (seleccion < 3)
                 {
-                    i++;
+                    seleccion++;
                 }
+                break;
             case 13:
                 flag2 =0;
             break;
@@ -94,13 +102,15 @@ void seleccionarAccion (nodoPer ** aliado,nodoPer ** enemigos, nodoPer **persona
             }
         }
         fflush(stdin);
-        boton = getch();
         switch (seleccion)
         {
         case 0: ///ataque
             objetivo = seleccionarAtacante (*enemigos);
+            printf("anterior %i\n",objetivo->chara.vida);
             objetivo = calculoAtaque((*persona),objetivo);
-            (*enemigos) = eliminarEnemigo((*enemigos));
+            printf("depuis%i",objetivo->chara.vida);
+            system("pause");
+            printf("\t\tEste es el nombre %s",aux->chara.nombre);
             if ((*persona)->chara.mod == 2)
             {
                 (*persona) = debuffDamagge((*persona));

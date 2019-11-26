@@ -24,12 +24,12 @@ nodoPer * defenzaOF (nodoPer *person);
 nodoPer * curacion(nodoPer *aliado, nodoPer *trus);
 nodoPer * buffDamage(nodoPer *aliado, nodoPer *trus);
 nodoPer *debuffDamagge (nodoPer *aliado);
-void iniciarCombate (nodoPer ** aliados,nodoPer ** enemigos,int validos);
+void iniciarCombate (nodoPer * aliados,nodoPer * enemigos,int validos);
 void restaurarTiempo (nodoPer *aliados, nodoPer * enemigos);
 void eliminarDeCola (int validos);
 void determinarSiSiguenVivos (nodoPer *aliados,nodoPer *enemigos,int validos);
-void brindarTurnos (nodoPer **aliados,nodo** enemigos);
-void previaCombate(nodoPer* aliados, nodoPer *enemigos);
+void brindarTurnos (nodoPer *aliados,nodo* enemigos);
+int previaCombate(nodoPer* aliados, nodoPer *enemigos);
 int contarValidos (nodoPer * enemigos);
 
 #endif // BATTLETHEME_H_INCLUDED

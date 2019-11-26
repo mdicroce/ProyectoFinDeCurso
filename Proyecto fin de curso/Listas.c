@@ -78,6 +78,7 @@ nodo * borrarNodoSimple(nodo * lista, int dato)
 
     if ((lista != NULL) && (dato == lista->dato))
     {
+        printf("Estoy en error?");
         nodo * aux = lista;
         lista = lista -> siguiente;
         free(aux);
@@ -85,7 +86,7 @@ nodo * borrarNodoSimple(nodo * lista, int dato)
     else
     {
         seg = lista;
-        while ((dato != lista->dato)&&(seg != NULL))
+        while ((seg != NULL)&&(dato != lista->dato))
         {
             ante = seg;
             seg = seg->siguiente;
@@ -113,7 +114,11 @@ nodo * borrarTodaLaListaSimple (nodo * lista)
 }
 nodo * borrarNodoPrimeroSimple(nodo * lista)
 {
-    nodo * aux = lista->siguiente;
-    free(lista);
+    nodo * aux;
+    if (lista != NULL)
+    {
+        aux = lista->siguiente;
+        free(lista);
+    }
     return aux;
 }

@@ -12,7 +12,7 @@
 #include "BattleTheme.h"
 
 
-IA (nodoPer **aliados,nodoPer **enemigos, nodoPer**seleccionado);
+IA (nodoPer *aliados,nodoPer *enemigos, nodoPer**seleccionado);
 
 #endif // IAENEMIGOS_H_INCLUDED
 

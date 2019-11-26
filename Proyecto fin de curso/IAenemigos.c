@@ -1,69 +1,40 @@
 #include "IAenemigos.h"
 
-IA (nodoPer **aliados,nodoPer **enemigos, nodoPer**seleccionado)
+IA (nodoPer *aliados,nodoPer *enemigos, nodoPer**seleccionado)
 {
     int prob = rand () %100;
-    nodoPer *auxAliados, *auxEnemigos, * auxiliar= NULL;
+    prob = 15;
+    nodoPer *auxAliados = aliados, *auxEnemigos = enemigos, *auxiliar= NULL;
+    system("cls");
+    printf("\n\n HOLA");
+    printf("    %i",(*seleccionado)->chara.tipo);
+    system("pause");
     switch ((*seleccionado)->chara.tipo)
     {
     case 4: ///tanque ataca al azar, con mayores posibilidades al rougue y al soldado
-        if (prob<19)
+        for (prob;prob>0;prob--)
         {
-            while ((auxAliados != NULL)&&(auxAliados->chara.tipo != 0))
+            if (auxAliados -> siguiente != NULL)
             {
                 auxAliados = auxAliados -> siguiente;
             }
-        }
-        else if ((prob < 39) && (prob >= 19))
-        {
-            while ((auxAliados != NULL)&&(auxAliados->chara.tipo != 1))
+            else
             {
-                auxAliados = auxAliados ->siguiente;
-            }
-        }
-        else if (prob > 70)
-        {
-            while ((auxAliados != NULL)&&(auxAliados ->chara.tipo != 2))
-            {
-                auxAliados = auxAliados -> siguiente;
-            }
-        }
-        else
-        {
-            while ((auxAliados != NULL)&&(auxAliados ->chara.tipo != 3))
-            {
-                auxAliados = auxAliados -> siguiente;
+                auxAliados = aliados;
             }
         }
         auxAliados = calculoAtaque(*seleccionado,auxAliados);
         break;
     case 5:///normal ataca al azar, con mayores posibilidades al mago y curador
-        if (prob<19)
+        for (prob;prob>0;prob--)
         {
-            while ((auxAliados != NULL)&&(auxAliados->chara.tipo != 3))
+            if (auxAliados -> siguiente != NULL)
             {
                 auxAliados = auxAliados -> siguiente;
             }
-        }
-        else if ((prob < 39) && (prob >= 19))
-        {
-            while ((auxAliados != NULL)&&(auxAliados->chara.tipo != 2))
+            else
             {
-                auxAliados = auxAliados ->siguiente;
-            }
-        }
-        else if (prob > 70)
-        {
-            while ((auxAliados != NULL)&&(auxAliados ->chara.tipo != 1))
-            {
-                auxAliados = auxAliados -> siguiente;
-            }
-        }
-        else
-        {
-            while ((auxAliados != NULL)&&(auxAliados ->chara.tipo != 0))
-            {
-                auxAliados = auxAliados -> siguiente;
+                auxAliados = aliados;
             }
         }
         auxAliados = calculoAtaque(*seleccionado,auxAliados);
@@ -94,7 +65,7 @@ IA (nodoPer **aliados,nodoPer **enemigos, nodoPer**seleccionado)
             {
                 if (auxEnemigos == NULL)
                 {
-                    auxEnemigos = *enemigos;
+                    auxEnemigos = enemigos;
                 }
                 else
                 {
