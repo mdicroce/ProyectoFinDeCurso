@@ -48,7 +48,7 @@ nodoPer * eliminarEnemigo (nodoPer * aliados)
         i++;
         aux = aux ->siguiente;
     }
-    validos = i+1;
+    validos = i;
     for (i=0;i<validos;i++)
     {
         if (auxiliares[i].vida <= 0)
@@ -155,6 +155,8 @@ void determinarSiSiguenVivos (nodoPer *aliados,nodoPer *enemigos,int validos)
         auxEnemigos = enemigos;
         while (auxAliados != NULL)
         {
+
+            printf("%d \n", auxAliados->chara.turno);
             if (auxAliados->chara.turno == i)
             {
                 if (auxAliados->chara.vida <= 0)
@@ -200,14 +202,16 @@ void restaurarTiempo (nodoPer *aliados, nodoPer * enemigos)
     if (auxAliados== NULL)
     {
 
-        while ((auxEnemigos->chara.turno != ColaDeTurnos->dato)&&(auxEnemigos!= NULL))
+        while ((auxEnemigos!= NULL) && (auxEnemigos->chara.turno != ColaDeTurnos->dato))
         {
             auxEnemigos= auxEnemigos->siguiente;
+
+            if (turnosGuardados[ColaDeTurnos->dato] != -1 && auxEnemigos !=NULL)
+            {
+                turnosGuardados[ColaDeTurnos->dato] = 100 - auxEnemigos->chara.agilidad;
+            }
         }
-        if (turnosGuardados[ColaDeTurnos->dato] != -1)
-        {
-            turnosGuardados[ColaDeTurnos->dato] = 100 - auxEnemigos->chara.agilidad;
-        }
+
 
     }
     else
@@ -234,7 +238,7 @@ void iniciarCombate (nodoPer * aliados,nodoPer * enemigos,int validos)
     int i=0;
     nodo * nuevoNodoSimple;
     nodoPer * aux = enemigos;
-    while (vivos)
+    while (vivos == 1)
     {
         if (aliados == NULL)
         {
