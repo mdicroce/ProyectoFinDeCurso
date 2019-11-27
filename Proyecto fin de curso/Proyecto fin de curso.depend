@@ -423,3 +423,101 @@
 1574776562 source:c:\users\mtt1p\documents\github\proyectofindecurso\proyecto fin de curso\menudeaccion.c
 	"MenuDeAccion.h"
 
+1574868832 source:c:\users\matias di croce\desktop\proyecto fin de curso\battletheme.c
+	"BattleTheme.h"
+
+1574808268 c:\users\matias di croce\desktop\proyecto fin de curso\battletheme.h
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"Listas.h"
+	"IAenemigos.h"
+
+1574808268 c:\users\matias di croce\desktop\proyecto fin de curso\listasdobles.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+
+1574808268 c:\users\matias di croce\desktop\proyecto fin de curso\iniciarpersonajes.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+
+1574808268 c:\users\matias di croce\desktop\proyecto fin de curso\listas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+
+1574808268 c:\users\matias di croce\desktop\proyecto fin de curso\iaenemigos.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	"Graficos (alpha).h"
+	"MenuDeAccion.h"
+	"BattleTheme.h"
+
+1574808268 c:\users\matias di croce\desktop\proyecto fin de curso\graficos (alpha).h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	"IAenemigos.h"
+	"MenuDeAccion.h"
+
+1574808268 c:\users\matias di croce\desktop\proyecto fin de curso\menudeaccion.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	"IAenemigos.h"
+	"Graficos (alpha).h"
+
+1574808268 source:c:\users\matias di croce\desktop\proyecto fin de curso\graficos (alpha).c
+	"Graficos (alpha).h"
+
+1574822528 source:c:\users\matias di croce\desktop\proyecto fin de curso\iaenemigos.c
+	"IAenemigos.h"
+
+1574808268 source:c:\users\matias di croce\desktop\proyecto fin de curso\listas.c
+	"Listas.h"
+
+1574808268 source:c:\users\matias di croce\desktop\proyecto fin de curso\listasdobles.c
+	"listasDobles.h"
+
+1574808268 source:c:\users\matias di croce\desktop\proyecto fin de curso\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	<time.h>
+	"listasDobles.h"
+	"IniciarPersonajes.h"
+	"IAenemigos.h"
+	"Graficos (alpha).h"
+	"MenuDeAccion.h"
+
+1574808268 source:c:\users\matias di croce\desktop\proyecto fin de curso\menudeaccion.c
+	"MenuDeAccion.h"
+
+1574824099 source:c:\users\matias di croce\desktop\proyecto fin de curso\iniciarpersonajes.c
+	"IniciarPersonajes.h"
+

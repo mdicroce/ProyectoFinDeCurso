@@ -53,6 +53,7 @@ nodoPer * eliminarEnemigo (nodoPer * aliados)
     {
         if (auxiliares[i].vida <= 0)
         {
+            printf("HOLA");
             aliados = borrarNodo(aliados,auxiliares[i]);
         }
     }
@@ -134,11 +135,10 @@ void brindarTurnos (nodoPer *aliados,nodo* enemigos)
         }
         else
         {
-            printf("\n\t\t %i",auxiliarColaDeTurnos->dato);
             datoBuscado = buscarNodo(auxiliarColaDeTurnos->dato,auxEnemigos);
             if (datoBuscado != NULL)
             {
-                printf("\t\t\tjesus");
+                printf("\n\n\nhello");
                 IA (aliados,enemigos,&datoBuscado);
             }
         }
@@ -232,7 +232,6 @@ void iniciarCombate (nodoPer * aliados,nodoPer * enemigos,int validos)
 {
     int vivos = 1;
     int i=0;
-    int deQuienEs;
     nodo * nuevoNodoSimple;
     nodoPer * aux = enemigos;
     while (vivos)
@@ -244,8 +243,6 @@ void iniciarCombate (nodoPer * aliados,nodoPer * enemigos,int validos)
         }
         for (int i=0;i<validos;i++)
         {
-            //printf("\n|%i| %i |",turnosGuardados[i],i);
-
             if (turnosGuardados[i] >0)
             {
                 turnosGuardados[i] --;
@@ -256,27 +253,22 @@ void iniciarCombate (nodoPer * aliados,nodoPer * enemigos,int validos)
                 ColaDeTurnos = agregarFinalSimple(ColaDeTurnos,nuevoNodoSimple);
 
             }
-            else
-            {
-
-            }
             if (ColaDeTurnos != NULL)
             {
                 roberto ();
                 /// EN la versión final, esto tiene que realizarse en un hilo aparte.
-                determinarSiSiguenVivos (aliados,enemigos,validos);
-                restaurarTiempo(aliados,enemigos);
-                printf("\n1");
-                brindarTurnos(aliados,enemigos); //CORREGIR ATAQUE
-                aliados = eliminarEnemigo(aliados);
-                printf("\n2");
-                enemigos = eliminarEnemigo(enemigos);
-                printf("\n3");
-                determinarSiSiguenVivos (aliados,enemigos,validos);
-                printf("\n4");
                 printf("hola");
+                determinarSiSiguenVivos (aliados,enemigos,validos);
+                printf("chau");
+                restaurarTiempo(aliados,enemigos);
+                printf("3");
+                brindarTurnos(aliados,enemigos); //CORREGIR ATAQUE
+                printf("4");
+                aliados = eliminarEnemigo(aliados);
+                enemigos = eliminarEnemigo(enemigos);
+                prueba(enemigos);
+                determinarSiSiguenVivos (aliados,enemigos,validos);
                 eliminarDeCola (validos);
-                printf("\n5");
             }
         }
         if ((aliados == NULL) || (enemigos == NULL))

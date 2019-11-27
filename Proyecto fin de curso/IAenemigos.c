@@ -12,6 +12,7 @@ IA (nodoPer *aliados,nodoPer *enemigos, nodoPer**seleccionado)
     switch ((*seleccionado)->chara.tipo)
     {
     case 4: ///tanque ataca al azar, con mayores posibilidades al rougue y al soldado
+        printf("hola");
         for (prob;prob>0;prob--)
         {
             if (auxAliados -> siguiente != NULL)
@@ -22,10 +23,12 @@ IA (nodoPer *aliados,nodoPer *enemigos, nodoPer**seleccionado)
             {
                 auxAliados = aliados;
             }
+            printf("jelou");
         }
         auxAliados = calculoAtaque(*seleccionado,auxAliados);
         break;
     case 5:///normal ataca al azar, con mayores posibilidades al mago y curador
+        printf("hola2");
         for (prob;prob>0;prob--)
         {
             if (auxAliados -> siguiente != NULL)
@@ -36,10 +39,12 @@ IA (nodoPer *aliados,nodoPer *enemigos, nodoPer**seleccionado)
             {
                 auxAliados = aliados;
             }
+            printf("jelou");
         }
         auxAliados = calculoAtaque(*seleccionado,auxAliados);
         break;
     case 6:///mago si tiene poca vida alguno, cura. Luego, por una cuestión aleatoria,
+        printf("hola3");
         while (auxEnemigos != NULL)
         {
             if (auxEnemigos->chara.vida < (auxEnemigos->chara.vidaMax / 2))
