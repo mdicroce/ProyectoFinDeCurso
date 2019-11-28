@@ -4,47 +4,58 @@ IA (nodoPer *aliados,nodoPer *enemigos, nodoPer**seleccionado)
 {
     int prob = rand () %100;
     prob = 15;
-    nodoPer *auxAliados = aliados, *auxEnemigos = enemigos, *auxiliar= NULL;
-    system("cls");
-    printf("\n\n HOLA");
-    printf("    %i",(*seleccionado)->chara.tipo);
-    system("pause");
+    if (aliados == NULL)
+        printf("hola");
+    nodoPer *auxAliados = aliados, *auxEnemigos = enemigos, *auxiliar= NULL,*auxiliar2;
+    if (auxAliados -> siguiente != NULL)
+    auxiliar2 = auxAliados->siguiente;
+    printf("hola %s",auxAliados->chara.nombre);
+    if (auxAliados == NULL)
+    {
+        printf("ESTOY VACIO");
+        system("pause");
+    }
     switch ((*seleccionado)->chara.tipo)
     {
     case 4: ///tanque ataca al azar, con mayores posibilidades al rougue y al soldado
-        printf("hola");
         for (prob;prob>0;prob--)
         {
-            if (auxAliados -> siguiente != NULL)
+            if (auxiliar2 != NULL)
             {
+                auxiliar2 = auxAliados->siguiente;
+                if (auxAliados -> siguiente != NULL)
                 auxAliados = auxAliados -> siguiente;
+
             }
             else
             {
                 auxAliados = aliados;
+                if (auxAliados->siguiente != NULL)
+                auxiliar2 = auxAliados->siguiente;
             }
-            printf("jelou");
         }
         auxAliados = calculoAtaque(*seleccionado,auxAliados);
         break;
     case 5:///normal ataca al azar, con mayores posibilidades al mago y curador
-        printf("hola2");
         for (prob;prob>0;prob--)
         {
-            if (auxAliados -> siguiente != NULL)
+            if (auxiliar2 != NULL)
             {
+                auxiliar2 = auxAliados ->siguiente;
+                if (auxAliados -> siguiente != NULL)
                 auxAliados = auxAliados -> siguiente;
+
             }
             else
             {
                 auxAliados = aliados;
+                if (auxAliados ->siguiente != NULL)
+                auxiliar2 = auxAliados ->siguiente;
             }
-            printf("jelou");
         }
         auxAliados = calculoAtaque(*seleccionado,auxAliados);
         break;
     case 6:///mago si tiene poca vida alguno, cura. Luego, por una cuestión aleatoria,
-        printf("hola3");
         while (auxEnemigos != NULL)
         {
             if (auxEnemigos->chara.vida < (auxEnemigos->chara.vidaMax / 2))

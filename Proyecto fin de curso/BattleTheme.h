@@ -28,7 +28,7 @@ void iniciarCombate (nodoPer * aliados,nodoPer * enemigos,int validos);
 void restaurarTiempo (nodoPer *aliados, nodoPer * enemigos);
 void eliminarDeCola (int validos);
 void determinarSiSiguenVivos (nodoPer *aliados,nodoPer *enemigos,int validos);
-void brindarTurnos (nodoPer *aliados,nodo* enemigos);
+nodoPer* brindarTurnos(nodoPer * aliados,nodoPer*enemigos);
 int previaCombate(nodoPer* aliados, nodoPer *enemigos);
 int contarValidos (nodoPer * enemigos);
 

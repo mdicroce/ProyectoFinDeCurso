@@ -10,5 +10,6 @@
 #include "IAenemigos.h"
 #include "MenuDeAccion.h"
 
+void graficas(void);
 
 #endif // GRAFICOS_(ALPHA)_H_INCLUDED

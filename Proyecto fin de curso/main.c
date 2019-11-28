@@ -17,7 +17,7 @@ void inicioDePartida ()
     int validos;
     nodoPer *aux,*aux2;
     aliados = crearListaAliados(charas);
-    while (1)
+    while (aliados != NULL)
     {
         enemigos = crearListaEnemigos(charas);
         aux = enemigos;
@@ -35,14 +35,14 @@ void inicioDePartida ()
             aux = aux->siguiente;
         }
         system("pause"),
-        validos = previaCombate(aliados,enemigos);
-        iniciarCombate(aliados,enemigos,validos);
+        aliados = brindarTurnos(aliados,enemigos);
     }
 }
 
 int main()
 {
     srand (time(NULL));
-    inicioDePartida();
+    //inicioDePartida();
+    graficas();
     return 0;
 }

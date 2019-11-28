@@ -17,8 +17,7 @@ personajes  crearPersonajes (personajes characters [])
     for (i=0;i<4;i++)
     {
         characters [i].tipo = i;
-        ///characters[i].vida = rand()%15+(30+(i*7));
-        characters[i].vida = 0;
+        characters[i].vida = rand()%15+(30+(i*7));
         characters [i].vidaMax = characters[i].vida;
         characters[i].suerte=rand()%10+5;
         characters[i].lvl = 1;
@@ -33,6 +32,7 @@ personajes  crearPersonajes (personajes characters [])
         }
         characters[i].mod =0;
         characters[i].turno = i;
+        characters[i].tiempo = 100 - characters[i].agilidad;
     }
 }
 void  crearEnemigos (personajes enemy[])
@@ -56,6 +56,7 @@ void  crearEnemigos (personajes enemy[])
         enemy[i].defenza=rand()%6+(15-i);
         enemy[i].agilidad=rand()%20+(5);
         enemy [i].mod = 0;
+        enemy[i].tiempo = 100 - enemy[i].agilidad;
     }
 }
 int seleccionarEnemigosAzar (int x[10])

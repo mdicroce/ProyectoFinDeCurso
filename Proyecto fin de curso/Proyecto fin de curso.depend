@@ -423,10 +423,10 @@
 1574776562 source:c:\users\mtt1p\documents\github\proyectofindecurso\proyecto fin de curso\menudeaccion.c
 	"MenuDeAccion.h"
 
-1574868832 source:c:\users\matias di croce\desktop\proyecto fin de curso\battletheme.c
+1574899703 source:c:\users\matias di croce\desktop\proyecto fin de curso\battletheme.c
 	"BattleTheme.h"
 
-1574808268 c:\users\matias di croce\desktop\proyecto fin de curso\battletheme.h
+1574899701 c:\users\matias di croce\desktop\proyecto fin de curso\battletheme.h
 	"listasDobles.h"
 	"IniciarPersonajes.h"
 	<stdio.h>
@@ -437,13 +437,13 @@
 	"Listas.h"
 	"IAenemigos.h"
 
-1574808268 c:\users\matias di croce\desktop\proyecto fin de curso\listasdobles.h
+1574889955 c:\users\matias di croce\desktop\proyecto fin de curso\listasdobles.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	<string.h>
 
-1574808268 c:\users\matias di croce\desktop\proyecto fin de curso\iniciarpersonajes.h
+1574886778 c:\users\matias di croce\desktop\proyecto fin de curso\iniciarpersonajes.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -451,13 +451,13 @@
 	<time.h>
 	"listasDobles.h"
 
-1574808268 c:\users\matias di croce\desktop\proyecto fin de curso\listas.h
+1574886778 c:\users\matias di croce\desktop\proyecto fin de curso\listas.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<windows.h>
 
-1574808268 c:\users\matias di croce\desktop\proyecto fin de curso\iaenemigos.h
+1574895131 c:\users\matias di croce\desktop\proyecto fin de curso\iaenemigos.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -469,7 +469,7 @@
 	"MenuDeAccion.h"
 	"BattleTheme.h"
 
-1574808268 c:\users\matias di croce\desktop\proyecto fin de curso\graficos (alpha).h
+1574899780 c:\users\matias di croce\desktop\proyecto fin de curso\graficos (alpha).h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -480,7 +480,7 @@
 	"IAenemigos.h"
 	"MenuDeAccion.h"
 
-1574808268 c:\users\matias di croce\desktop\proyecto fin de curso\menudeaccion.h
+1574886778 c:\users\matias di croce\desktop\proyecto fin de curso\menudeaccion.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -491,19 +491,19 @@
 	"IAenemigos.h"
 	"Graficos (alpha).h"
 
-1574808268 source:c:\users\matias di croce\desktop\proyecto fin de curso\graficos (alpha).c
+1574900436 source:c:\users\matias di croce\desktop\proyecto fin de curso\graficos (alpha).c
 	"Graficos (alpha).h"
 
-1574822528 source:c:\users\matias di croce\desktop\proyecto fin de curso\iaenemigos.c
+1574897878 source:c:\users\matias di croce\desktop\proyecto fin de curso\iaenemigos.c
 	"IAenemigos.h"
 
-1574808268 source:c:\users\matias di croce\desktop\proyecto fin de curso\listas.c
+1574886778 source:c:\users\matias di croce\desktop\proyecto fin de curso\listas.c
 	"Listas.h"
 
-1574808268 source:c:\users\matias di croce\desktop\proyecto fin de curso\listasdobles.c
+1574886778 source:c:\users\matias di croce\desktop\proyecto fin de curso\listasdobles.c
 	"listasDobles.h"
 
-1574808268 source:c:\users\matias di croce\desktop\proyecto fin de curso\main.c
+1574899780 source:c:\users\matias di croce\desktop\proyecto fin de curso\main.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -515,10 +515,10 @@
 	"Graficos (alpha).h"
 	"MenuDeAccion.h"
 
-1574808268 source:c:\users\matias di croce\desktop\proyecto fin de curso\menudeaccion.c
+1574886778 source:c:\users\matias di croce\desktop\proyecto fin de curso\menudeaccion.c
 	"MenuDeAccion.h"
 
-1574824099 source:c:\users\matias di croce\desktop\proyecto fin de curso\iniciarpersonajes.c
+1574896125 source:c:\users\matias di croce\desktop\proyecto fin de curso\iniciarpersonajes.c
 	"IniciarPersonajes.h"
 
 1574884953 source:c:\users\jeremiasaxel\desktop\proyectofindecurso\proyecto fin de curso\graficos (alpha).c
@@ -615,4 +615,9 @@
 
 1574884954 source:c:\users\jeremiasaxel\desktop\proyectofindecurso\proyecto fin de curso\menudeaccion.c
 	"MenuDeAccion.h"
+
+1491400450 source:c:\users\matias di croce\desktop\proyecto fin de curso\gotoxy.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
 
