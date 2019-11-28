@@ -41,8 +41,6 @@ nodoPer * buscarUltimo(nodoPer * lista)
 nodoPer * buscarNodo(int dato, nodoPer * lista)
 {
     nodoPer *aux = lista;
-    printf("\n\nHOLA");
-    system("pause");
     while ((aux != NULL)&&(dato != aux ->chara.turno))
     {
 

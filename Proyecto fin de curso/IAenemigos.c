@@ -2,19 +2,10 @@
 
 IA (nodoPer *aliados,nodoPer *enemigos, nodoPer**seleccionado)
 {
-    int prob = rand () %100;
-    prob = 15;
-    if (aliados == NULL)
-        printf("hola");
+    int prob = rand () %100+1;
     nodoPer *auxAliados = aliados, *auxEnemigos = enemigos, *auxiliar= NULL,*auxiliar2;
     if (auxAliados -> siguiente != NULL)
     auxiliar2 = auxAliados->siguiente;
-    printf("hola %s",auxAliados->chara.nombre);
-    if (auxAliados == NULL)
-    {
-        printf("ESTOY VACIO");
-        system("pause");
-    }
     switch ((*seleccionado)->chara.tipo)
     {
     case 4: ///tanque ataca al azar, con mayores posibilidades al rougue y al soldado

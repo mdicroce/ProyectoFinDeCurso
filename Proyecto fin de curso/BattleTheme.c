@@ -1,14 +1,7 @@
 #include "BattleTheme.h"
 int *turnosGuardados;
 nodo * ColaDeTurnos;
-void prueba (nodoPer *aux)
-{
-    while (aux!= NULL)
-    {
-        printf("Nombre : %s\n",aux->chara.nombre);
-        aux = aux->siguiente;
-    }
-}
+
 nodoPer * calculoAtaque (nodoPer *atacante, nodoPer *defensor)
 {
     int danio;
@@ -53,7 +46,6 @@ nodoPer * eliminarEnemigo (nodoPer * aliados)
     {
         if (auxiliares[i].vida <= 0)
         {
-            printf("HOLA");
             aliados = borrarNodo(aliados,auxiliares[i]);
         }
     }
@@ -115,7 +107,11 @@ nodoPer * brindarTurnos(nodoPer * aliados,nodoPer *enemigos)
             auxAliados->chara.tiempo --;
             if (auxAliados->chara.tiempo == 0)
             {
+                auxAliados->chara.turn = 1;
+                system("cls");
+                graficas(aliados,enemigos);
                 seleccionarAccion(&aliados,&enemigos,&auxAliados);
+                auxAliados->chara.turn = 0;
                 auxAliados->chara.tiempo = 100 - auxAliados->chara.agilidad;
                 enemigos = eliminarEnemigo(enemigos);
             }
@@ -128,7 +124,11 @@ nodoPer * brindarTurnos(nodoPer * aliados,nodoPer *enemigos)
             auxEnemigos->chara.tiempo --;
             if (auxEnemigos->chara.tiempo==0)
             {
+                auxEnemigos->chara.turn = 1;
+                system("cls");
+                graficas(aliados,enemigos);
                 IA (aliados,enemigos,&auxEnemigos);
+                auxEnemigos->chara.turn =0;
                 auxEnemigos->chara.tiempo = 100 - auxEnemigos->chara.agilidad;
                 aliados = eliminarEnemigo(aliados);
             }

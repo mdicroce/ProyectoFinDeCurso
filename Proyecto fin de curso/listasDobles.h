@@ -20,6 +20,8 @@ typedef struct
     int turno;
     int mod;
     int tiempo;
+    char clase[20];
+    int turn;
 }personajes;
 typedef struct
 {

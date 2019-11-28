@@ -14,6 +14,8 @@ personajes charas[7];
 
 void inicioDePartida ()
 {
+    graficosInicio();
+    instrucciones();
     int validos;
     nodoPer *aux,*aux2;
     aliados = crearListaAliados(charas);
@@ -21,20 +23,10 @@ void inicioDePartida ()
     {
         enemigos = crearListaEnemigos(charas);
         aux = enemigos;
-        while (aux != NULL)
-        {
-            printf("\n%i",aux->chara.vida);
-            aux = aux->siguiente;
-        }
         enemigos = eliminarEnemigo(enemigos);
-        printf("\n");
         aux = enemigos;
-        while (aux != NULL)
-        {
-            printf("\n%i",aux->chara.vida);
-            aux = aux->siguiente;
-        }
-        system("pause"),
+        system("cls");
+        graficas(aliados,enemigos);
         aliados = brindarTurnos(aliados,enemigos);
     }
 }
@@ -42,7 +34,7 @@ void inicioDePartida ()
 int main()
 {
     srand (time(NULL));
-    //inicioDePartida();
-    graficas();
+    inicioDePartida();
+
     return 0;
 }

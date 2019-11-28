@@ -10,6 +10,8 @@
 #include "IAenemigos.h"
 #include "MenuDeAccion.h"
 
-void graficas(void);
-
+void graficas (nodoPer * aliados, nodoPer * enemigos);
+void menu(int opcion);
+void graficosInicio(void);
+void graff(void);
 #endif // GRAFICOS_(ALPHA)_H_INCLUDED

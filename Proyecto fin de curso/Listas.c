@@ -78,7 +78,6 @@ nodo * borrarNodoSimple(nodo * lista, int dato)
 
     if ((lista != NULL) && (dato == lista->dato))
     {
-        printf("Estoy en error?");
         nodo * aux = lista;
         lista = lista -> siguiente;
         free(aux);

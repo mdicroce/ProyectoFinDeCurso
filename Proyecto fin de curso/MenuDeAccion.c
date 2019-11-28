@@ -23,29 +23,32 @@ La defenza directamente se tiene que aceptar.
 
 los objetos se veran despues.*/
 
-nodoPer * seleccionarAtacante (nodoPer * enemigos)
+nodoPer * seleccionarAtacante (nodoPer * enemigos,nodoPer * aliados)
 {
     int flag = 1;
     nodoPer * aux = enemigos;
     char opc;
     while (flag)
     {
-        fflush(stdin);
         system("cls");
-        printf("%s",aux->chara.nombre);
+        graficas(enemigos,aliados);
         opc = getch();
         switch (opc)
         {
         case 72:
             if (aux ->anterior != NULL)
             {
+                aux->chara.turn = 1;
                 aux = aux->anterior;
+                aux->chara.turn = 0;
             }
             break;
         case 80:
             if (aux ->siguiente != NULL)
             {
+                aux->chara.turn = 1;
                 aux = aux ->siguiente;
+                aux -> chara.turn =0;
             }
             break;
         case 13:
@@ -76,19 +79,17 @@ void seleccionarAccion (nodoPer ** aliado,nodoPer ** enemigos, nodoPer **persona
         {
 
             fflush(stdin);
-            printf("%i",seleccion);
+            menu(seleccion);
             boton = getch();
             switch (boton)
             {
             case 72:
-                printf("arriba");
                 if (seleccion > 0)
                 {
                     seleccion--;
                 }
                 break;
             case 80:
-                printf("abajo");
                 if (seleccion < 3)
                 {
                     seleccion++;
@@ -105,12 +106,8 @@ void seleccionarAccion (nodoPer ** aliado,nodoPer ** enemigos, nodoPer **persona
         switch (seleccion)
         {
         case 0: ///ataque
-            objetivo = seleccionarAtacante (*enemigos);
-            printf("anterior %i\n",objetivo->chara.vida);
+            objetivo = seleccionarAtacante (*enemigos,*aliado);
             objetivo = calculoAtaque((*persona),objetivo);
-            printf("depuis%i",objetivo->chara.vida);
-            system("pause");
-            printf("\t\tEste es el nombre %s",aux->chara.nombre);
             if ((*persona)->chara.mod == 2)
             {
                 (*persona) = debuffDamagge((*persona));
@@ -132,7 +129,7 @@ void seleccionarAccion (nodoPer ** aliado,nodoPer ** enemigos, nodoPer **persona
                 //seleccionAuxiliar=seleccionarMagia ();
                 if (seleccionAuxiliar == 0)
                 {
-                    objetivo = seleccionarAtacante((*aliado));
+                    objetivo = seleccionarAtacante((*aliado),(*enemigos));
                     objetivo = curacion((*persona),objetivo);
                 }
                 else

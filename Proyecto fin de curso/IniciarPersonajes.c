@@ -32,7 +32,25 @@ personajes  crearPersonajes (personajes characters [])
         }
         characters[i].mod =0;
         characters[i].turno = i;
+        characters[i].turn = 0;
         characters[i].tiempo = 100 - characters[i].agilidad;
+        switch (i)
+        {
+        case 0:
+            strcpy(characters[i].clase,"Mago");
+            break;
+        case 1:
+            strcpy(characters[i].clase,"Curador");
+            break;
+        case 2:
+            strcpy(characters[i].clase,"Asesino");
+            break;
+        case 3:
+            strcpy(characters[i].clase,"Guerrero");
+            break;
+        default:
+            break;
+        }
     }
 }
 void  crearEnemigos (personajes enemy[])
@@ -49,6 +67,7 @@ void  crearEnemigos (personajes enemy[])
         enemy[i].inteligencia=rand()%6+i;
         enemy[i].fuerza=rand ()%11+(3+(8-i));
         enemy[i].fuerzaOrg = enemy [i].fuerza;
+        enemy[i].turn = 0;
         if (i==5)
         {
             enemy[i].fuerza += 3;
@@ -57,6 +76,20 @@ void  crearEnemigos (personajes enemy[])
         enemy[i].agilidad=rand()%20+(5);
         enemy [i].mod = 0;
         enemy[i].tiempo = 100 - enemy[i].agilidad;
+        switch (i)
+        {
+        case 4:
+            strcpy(enemy[i].clase,"Orco");
+            break;
+        case 5:
+            strcpy(enemy[i].clase,"Goblin");
+            break;
+        case 6:
+            strcpy(enemy[i].clase,"Chaman");
+            break;
+        default:
+            break;
+        }
     }
 }
 int seleccionarEnemigosAzar (int x[10])
@@ -161,28 +194,33 @@ nodoPer * crearListaAliados(personajes aliados[])
     for (int i = 0; i<4;i++)
     {
         system("cls");
+        graff();
         switch (i)
         {
         case 0:
-            printf("\n\n\t\tIngrese el nombre del mago\n");
+            gotoxy(15,10);
+            printf("Ingrese el nombre del mago\n");
             fflush(stdin);
             printf("\t\t");
             gets (aliados[i].nombre);
             break;
         case 1:
-            printf("\n\n\t\tIngrese el nombre del curador\n");
+            gotoxy(15,10);
+            printf("Ingrese el nombre del curador\n");
             fflush(stdin);
             printf("\t\t");
             gets (aliados[i].nombre);
             break;
         case 2:
-            printf("\n\n\t\tIngrese el nombre del rougue\n");
+            gotoxy(15,10);
+            printf("Ingrese el nombre del rougue\n");
             fflush(stdin);
             printf("\t\t");
             gets (aliados[i].nombre);
             break;
         case 3:
-            printf("\n\n\t\tIngrese el nombre del soldado\n");
+            gotoxy(15,10);
+            printf("Ingrese el nombre del soldado\n");
             fflush(stdin);
             printf("\t\t");
             gets (aliados[i].nombre);
