@@ -1,7 +1,7 @@
 #include "BattleTheme.h"
 int *turnosGuardados;
 nodo * ColaDeTurnos;
-
+nodo * coller;
 nodoPer * calculoAtaque (nodoPer *atacante, nodoPer *defensor)
 {
     int danio;
@@ -140,9 +140,9 @@ nodoPer * brindarTurnos(nodoPer * aliados,nodoPer *enemigos)
     system("pause");
     return aliados;
 }
-///EL PROBLEMA A RESOLVER es determinar si siguen vivos, porque debería decir que X esta muerto y hacer que su numero se vuelva -1 y no lo hace
+///EL PROBLEMA A RESOLVER es determinar si siguen vivos, porque deberï¿½a decir que X esta muerto y hacer que su numero se vuelva -1 y no lo hace
 /// PREGUNTAR como realizar los turnos (?)
-/** Primero tenemos que volver a pensar en como se debe realizar esto. Primero se hacía con una lista y un arreglo dinámico. La lista
+/** Primero tenemos que volver a pensar en como se debe realizar esto. Primero se hacï¿½a con una lista y un arreglo dinï¿½mico. La lista
 guardaba los turnos y trabajaba como una cola, mientras que el arreglo guardaba una referencia al turno y esas cosas.
 
-También tengo que modificar las estructuras para poder designarle a cada uno de los bichos un identificador.*/
+Tambiï¿½n tengo que modificar las estructuras para poder designarle a cada uno de los bichos un identificador.*/
